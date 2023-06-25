@@ -1,3 +1,4 @@
+#Importing necessary modules
 import tkinter as tk
 
 import requests
@@ -5,8 +6,7 @@ import requests
 HEIGHT= 500
 WIDTH= 600
 
-#d1529082aa9e27fbe1923128093a9bf2
-#pro.openweathermap.org/data/2.5/forecast/hourly?q={city name}&appid={your api key}
+#Initializing the API key
 def get_weather(city):
     weather_key='d1529082aa9e27fbe1923128093a9bf2'
     url='https://pro.openweathermap.org/data/2.5/forecast/weather
@@ -19,15 +19,15 @@ root = tk.Tk()
 
 canvas= tk.Canvas(root,height=HEIGHT,width=WIDTH)
 canvas.pack()
-
+#Setting the background image
 background_image= tk.PhotoImage(file='landscape.png')
 background_label=tk.Label(root,image=background_image)
 background_label.place(relwidth=1,relheight=1)
 
-
+#Adding Frame
 frame = tk.Frame(root,bg="#b3b3b3",bd=5)
 frame.place(relx=0.5,rely=0.1,relwidth=0.75,relheight=0.1,anchor='n')
-
+#Adding buttons
 button = tk.Button(frame,text="Get Weather",font=40, command= lambda: get_weather(entry.get()))
 button.place(relx=0.7,relheight=1,relwidth=0.3)
 
